@@ -1,0 +1,14 @@
+---
+# tasks file for pulp-rpm-prerequisites
+
+- name: Load OS specific variables
+  include_vars: '{{ ansible_distribution }}.yml'
+  tags:
+    - always
+
+- name: Install requested RPM packages
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ packages }}'
+  become: true

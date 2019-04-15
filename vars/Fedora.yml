@@ -1,0 +1,19 @@
+---
+# vars file for pulp-rpm-prerequisites on Fedora
+packages:
+  - gcc
+  - make
+  - cmake
+  - bzip2-devel
+  - expat-devel
+  - file-devel
+  - glib2-devel
+  - libcurl-devel
+  - libxml2-devel
+  - python3-devel
+  - rpm-devel
+  - openssl-devel
+  - sqlite-devel
+  - xz-devel
+  - zchunk-devel
+  - zlib-devel

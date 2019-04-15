@@ -1,0 +1,21 @@
+---
+# vars file for pulp-rpm-prerequisites on CentOS
+ansible_python_interpreter: /usr/bin/python
+
+packages:
+  - gcc
+  - make
+  - cmake
+  - bzip2-devel
+  - expat-devel
+  - file-devel
+  - glib2-devel
+  - libcurl-devel
+  - libxml2-devel
+  - python34-devel # CentOS specific from epel
+  - rpm-devel
+  - openssl-devel
+  - sqlite-devel
+  - xz-devel
+  - zchunk-devel
+  - zlib-devel
