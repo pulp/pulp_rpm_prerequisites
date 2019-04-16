@@ -12,7 +12,7 @@ packages:
   - glib2-devel
   - libcurl-devel
   - libxml2-devel
-  - python34-devel # CentOS specific from epel
+  - python36-devel # CentOS specific from epel
   - rpm-devel
   - openssl-devel
   - sqlite-devel
