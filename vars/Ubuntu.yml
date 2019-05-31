@@ -1,0 +1,18 @@
+---
+# vars file for pulp-rpm-prerequisites on Ubuntu
+packages:
+  - gcc
+  - make
+  - cmake
+  - libbz2-dev
+  - libexpat1-dev
+  - libmagic-dev
+  - libglib2.0-dev
+  - libcurl4-openssl-dev
+  - libxml2-dev
+  - libpython3-dev
+  - librpm-dev
+  - libssl-dev
+  - libsqlite3-dev
+  - liblzma-dev
+  - zlib1g-dev
