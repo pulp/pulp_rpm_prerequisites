@@ -9,6 +9,7 @@ packages:
   - file-devel
   - glib2-devel
   - libcurl-devel
+  - libmodulemd
   - libxml2-devel
   - python3-devel
   - rpm-devel
