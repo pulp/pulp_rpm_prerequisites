@@ -20,8 +20,7 @@ Including an example of how to use your role (for instance, with variables passe
         pulp_secret_key: secret
         pulp_default_admin_password: password
         pulp_install_plugins:
-          pulp-rpm:
-            app_label: "rpm"
+          pulp-rpm: {}
       roles:
         - pulp-rpm-prerequisites
         - pulp-database
