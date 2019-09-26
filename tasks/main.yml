@@ -1,5 +1,5 @@
 ---
-# tasks file for pulp-rpm-prerequisites
+# tasks file for pulp-rpm-prereqs
 
 - name: Load OS specific variables
   include_vars: '{{ ansible_distribution }}.yml'
@@ -12,3 +12,8 @@
     state: present
   with_items: '{{ packages }}'
   become: true
+
+- name: Merge rpm_prereq_pip_packages into prereq_pip_packages
+  set_fact:
+    prereq_pip_packages: "{{ prereq_pip_packages + rpm_prereq_pip_packages }}"
+  when: rpm_prereq_pip_packages is defined
