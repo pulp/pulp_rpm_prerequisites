@@ -6,12 +6,15 @@ packages:
   - gcc
   - make
   - cmake
+  - doxygen
   - bzip2-devel
   - expat-devel
   - file-devel
   - glib2-devel
   - libcurl-devel
+  - libmodulemd2-devel
   - libxml2-devel
+  - ninja-build
   - python36-devel # CentOS specific from epel
   - rpm-devel
   - openssl-devel
