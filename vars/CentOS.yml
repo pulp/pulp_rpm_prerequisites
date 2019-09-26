@@ -3,6 +3,9 @@
 ansible_python_interpreter: /usr/bin/python
 
 packages:
+  # epel-release must be 1st so that later zchunk-devel can install from it.
+  # And if we switch to yum or dnf, it must be a separate task.
+  - epel-release
   - gcc
   - make
   - cmake
