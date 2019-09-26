@@ -25,3 +25,11 @@ packages:
   - xz-devel
   - zchunk-devel
   - zlib-devel
+
+# This var comes from the pulp-rpm-prerequisites role, but the packages must
+# be explicitly installed during the pulp role, after venv is created.
+# Otherwise, even though createrepo_c requires them, they are often not
+# installed, even with newer versions of pip.
+pulp_rpm_prerequisites_pypi_packages:
+  - scikit-build
+  - nose
