@@ -9,7 +9,6 @@ packages:
   - gcc
   - make
   - cmake
-  - doxygen
   - bzip2-devel
   - expat-devel
   - file-devel
