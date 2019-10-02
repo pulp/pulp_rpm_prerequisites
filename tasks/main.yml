@@ -13,7 +13,22 @@
   with_items: '{{ packages }}'
   become: true
 
+- name: Fail if we do not have prereq_pip_packages
+  fail:
+    msg:
+      - 'Error: The variable prereq_pip_packages is not defined from the pulp role.'
+      - 'You are probably running this role individually, or dynamically w/ include_role.'
+      - 'See README.md on how to set pulp_install_plugins to run it within the "pulp" role.'
+      - 'This role has completed everything else successfully. If you wish to continue,'
+      - 'you will need to pip install these packages manually:'
+      - '{{ rpm_prereq_pip_packages }}'
+  when:
+    - rpm_prereq_pip_packages is defined
+    - prereq_pip_packages is not defined
+
 - name: Merge rpm_prereq_pip_packages into prereq_pip_packages
   set_fact:
     prereq_pip_packages: "{{ prereq_pip_packages + rpm_prereq_pip_packages }}"
-  when: rpm_prereq_pip_packages is defined
+  when:
+    - rpm_prereq_pip_packages is defined
+    - prereq_pip_packages is defined

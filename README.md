@@ -21,9 +21,9 @@ Including an example of how to use your role (for instance, with variables passe
         pulp_settings:
           secret_key: secret
         pulp_install_plugins:
-          pulp-rpm: {}
+          pulp-rpm:
+            prereq_role: "pulp-rpm-prerequisites"
       roles:
-        - pulp-rpm-prerequisites
         - pulp-database
         - pulp-workers
         - pulp-resource-manager
