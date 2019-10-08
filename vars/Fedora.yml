@@ -12,6 +12,7 @@ packages:
   - libmodulemd-devel
   - libxml2-devel
   - python3-devel
+  - python3-gobject  # Provides 'gi' Python module
   - python3-libmodulemd
   - rpm-devel
   - openssl-devel
