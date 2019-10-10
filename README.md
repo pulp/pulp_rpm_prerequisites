@@ -18,6 +18,7 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: all
       vars:
         pulp_default_admin_password: password
+        pulp_use_system_wide_pkgs: true
         pulp_settings:
           secret_key: secret
         pulp_install_plugins:
