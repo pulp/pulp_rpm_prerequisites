@@ -15,4 +15,5 @@ packages:
   - libssl-dev
   - libsqlite3-dev
   - liblzma-dev
+  - libmodulemd-2.0-dev
   - zlib1g-dev
