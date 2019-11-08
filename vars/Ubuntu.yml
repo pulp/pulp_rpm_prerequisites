@@ -1,5 +1,5 @@
 ---
-# vars file for pulp-rpm-prerequisites on Ubuntu
+# vars file for pulp_rpm_prerequisites on Ubuntu
 packages:
   - gcc
   - make

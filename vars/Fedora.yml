@@ -1,5 +1,5 @@
 ---
-# vars file for pulp-rpm-prerequisites on Fedora
+# vars file for pulp_rpm_prerequisites on Fedora
 packages:
   - gcc
   - make

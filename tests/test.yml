@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - pulp-rpm-prerequisites
+    - pulp.pulp_rpm_prerequisites
