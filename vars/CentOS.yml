@@ -1,5 +1,5 @@
 ---
-# vars file for pulp-rpm-prerequisites on CentOS
+# vars file for pulp_rpm_prerequisites on CentOS
 ansible_python_interpreter: /usr/bin/python
 
 packages:
