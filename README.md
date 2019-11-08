@@ -1,7 +1,8 @@
 Pulp 3 RPM plugin prerequisites
 ===============================
 
-This role installs prerequisites for pulp-rpm plugin use.
+This role installs prerequisites for pulp-rpm plugin use, when installed by
+ansible-pulp.
 
 Requirements
 ------------
@@ -9,10 +10,18 @@ Requirements
 Each currently supported operating system has a matching file in the "vars"
 directory.
 
+Installation
+------------
+
+Install in the [ansible role search path](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-search-path)
+as the foldername `pulp.pulp_rpm_prerequisites`, by either:
+*. `ansible-galaxy install pulp.pulp_rpm_prerequisites -p ./roles/`
+*. Cloning this repo, and symlinking it as pulp.pulp_rpm_prerequisites
+
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Here's an example playbook for using pulp_rpm_prerequisites as part of ansible-pulp.
 
     ---
     - hosts: all
@@ -23,7 +32,7 @@ Including an example of how to use your role (for instance, with variables passe
           secret_key: secret
         pulp_install_plugins:
           pulp-rpm:
-            prereq_role: "pulp-rpm-prerequisites"
+            prereq_role: "pulp.pulp_rpm_prerequisites"
       roles:
         - pulp-database
         - pulp-workers
