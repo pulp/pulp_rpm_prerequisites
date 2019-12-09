@@ -29,8 +29,8 @@ packages:
   - zlib-devel
 
 # These packages must be explicitly installed during the pulp role, after the
-# venv is created. Otherwise, even though createrepo_c requires them, they are
-# often not installed, even with newer versions of pip.
+# venv is created. Otherwise, older versions of pip that lack PEP517/PEP518
+# support cannot use them to build createrepo_c or libcomps.
 rpm_prereq_pip_packages:
   - scikit-build
   - nose
