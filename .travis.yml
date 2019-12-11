@@ -1,0 +1,33 @@
+---
+# Molecule runs tests in containers.
+sudo: required
+# By default, Traivs provides Ubuntu 14.04 VMs. We specify a newer release so
+# that Python 3.7 can be used in testing.
+dist: xenial
+services:
+  - docker
+
+# Manually defining a build matrix is more cumbersome than using a tool like
+# tox-travis. However, this avoids adding yet another layer of abstraction, and
+# it offers great flexibility. See:
+# https://stackoverflow.com/questions/37016688/how-to-run-tox-with-travis-ci
+language: python
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=py27
+    - python: 3.6
+      env: TOXENV=py36
+    - python: 3.7
+      env: TOXENV=py37
+install:
+  - pip install --upgrade pip
+  - pip install tox
+  - sudo add-apt-repository --yes ppa:rmescandon/yq
+  - sudo apt update
+  - sudo apt install yq -y
+
+  # Much easier than trying to use the travis_wait bash function in tox.
+  - wget -qO- https://github.com/crazy-max/travis-wait-enhanced/releases/download/v1.0.0/travis-wait-enhanced_1.0.0_linux_x86_64.tar.gz | sudo tar -C /usr/local/bin -zxvf - travis-wait-enhanced
+script:
+  - ./.ansible-pulp_tox.sh
