@@ -1,6 +1,7 @@
 ---
 # vars file for pulp_rpm_prerequisites on Fedora
 packages:
+  # createrepo_c
   - gcc
   - make
   - cmake
@@ -9,14 +10,18 @@ packages:
   - file-devel
   - glib2-devel
   - libcurl-devel
-  - libmodulemd-devel
   - libxml2-devel
   - python3-devel
-  - python3-gobject  # Provides 'gi' Python module
-  - python3-libmodulemd
   - rpm-devel
   - openssl-devel
   - sqlite-devel
   - xz-devel
   - zchunk-devel
   - zlib-devel
+  # libmodulemd
+  - python3-gobject  # Provides 'gi' Python module
+  - python3-libmodulemd
+  - libmodulemd-devel
+  # libsolv
+  - python3-solv
+
