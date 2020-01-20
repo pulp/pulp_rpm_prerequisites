@@ -16,21 +16,17 @@ packages:
   - file-devel
   - glib2-devel
   - libcurl-devel
+  - libmodulemd2-devel
   - libxml2-devel
   - ninja-build
   - python36-devel
+  - python36-gobject  # Provides 'gi' Python module
   - rpm-devel
   - openssl-devel
   - sqlite-devel
   - xz-devel
   - zchunk-devel
   - zlib-devel
-  # libmodulemd
-  - python36-gobject  # Provides 'gi' Python module
-  - python36-libmodulemd
-  - libmodulemd2-devel
-  # libsolv
-  - python36-solv
 
 # These packages must be explicitly installed during the pulp role, after the
 # venv is created. Otherwise, older versions of pip that lack PEP517/PEP518
