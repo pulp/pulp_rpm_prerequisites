@@ -48,16 +48,16 @@ cd ..
 git clone --depth=1 https://github.com/pulp/ansible-pulp.git
 if [ -n "$PULP_ROLES_PR_NUMBER" ]; then
   cd ansible-pulp
-  git fetch --depth=1 origin +refs/pull/$PULP_ROLES_PR_NUMBER/merge
-  git checkout FETCH_HEAD
+  git fetch --depth=1 origin pull/$PULP_ROLES_PR_NUMBER/head:$PULP_ROLES_PR_NUMBER
+  git checkout $PULP_ROLES_PR_NUMBER
   cd ..
 fi
 
 git clone --depth=1 https://github.com/pulp/pulp_rpm.git
 if [ -n "$PULP_RPM_PR_NUMBER" ]; then
   cd pulp_rpm
-  git fetch --depth=1 origin +refs/pull/$PULP_RPM_PR_NUMBER/merge
-  git checkout FETCH_HEAD
+  git fetch --depth=1 origin pull/$PULP_RPM_PR_NUMBER/head:$PULP_RPM_PR_NUMBER
+  git checkout $PULP_RPM_PR_NUMBER
   cd ..
 fi
 
@@ -65,8 +65,8 @@ fi
 git clone --depth=1 https://github.com/pulp/pulp_file.git
 if [ -n "$PULP_FILE_PR_NUMBER" ]; then
   cd pulp_file
-  git fetch --depth=1 origin +refs/pull/$PULP_FILE_PR_NUMBER/merge
-  git checkout FETCH_HEAD
+  git fetch --depth=1 origin pull/$PULP_FILE_PR_NUMBER/head:$PULP_FILE_PR_NUMBER
+  git checkout $PULP_FILE_PR_NUMBER
   cd ..
 fi
 
@@ -74,8 +74,8 @@ fi
 git clone --depth=1 https://github.com/pulp/pulp-operator.git
 if [ -n "$PULP_OPERATOR_PR_NUMBER" ]; then
   cd pulp-operator
-  git fetch --depth=1 origin +refs/pull/$PULP_OPERATOR_PR_NUMBER/merge
-  git checkout FETCH_HEAD
+  git fetch --depth=1 origin pull/$PULP_OPERATOR_PR_NUMBER/head:$PULP_OPERATOR_PR_NUMBER
+  git checkout $PULP_OPERATOR_PR_NUMBER
   RELEASE_VERSION=v0.9.0
   curl -LO https://github.com/operator-framework/operator-sdk/releases/download/${RELEASE_VERSION}/operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu
   chmod +x operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu && sudo mkdir -p /usr/local/bin/ && sudo cp operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu /usr/local/bin/operator-sdk && rm operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu
@@ -88,8 +88,8 @@ git clone --depth=1 https://github.com/pulp/pulpcore.git --branch master
 
 if [ -n "$PULP_PR_NUMBER" ]; then
   cd pulpcore
-  git fetch --depth=1 origin +refs/pull/$PULP_PR_NUMBER/merge
-  git checkout FETCH_HEAD
+  git fetch --depth=1 origin pull/$PULP_PR_NUMBER/head:$PULP_PR_NUMBER
+  git checkout $PULP_PR_NUMBER
   cd ..
 fi
 
