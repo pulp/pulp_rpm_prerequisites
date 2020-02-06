@@ -10,15 +10,18 @@ packages:
   - epel-release
   - gcc
   - make
+  - cairo-gobject-devel
   - cmake
   - bzip2-devel
   - expat-devel
   - file-devel
   - glib2-devel
+  - gobject-introspection-devel
   - libcurl-devel
   - libmodulemd2-devel
   - libxml2-devel
   - ninja-build
+  - pycairo-devel
   - python36-devel
   - python36-gobject  # Provides 'gi' Python module
   - rpm-devel

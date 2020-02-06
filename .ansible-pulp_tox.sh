@@ -9,12 +9,16 @@ if [ ! -e roles/pulp.pulp_rpm_prerequisites ]; then
   ln -s $TRAVIS_BUILD_DIR roles/pulp.pulp_rpm_prerequisites
 fi
 
-find */group_vars/all -exec sh -c "yq w -i {} pulp_use_system_wide_pkgs true" \;
-find */group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.app_label rpm" \;
-find */group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.source_dir git+https:\/\/github.com\/pulp\/pulp_rpm.git#egg=pulp-rpm" \;
-find */group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.prereq_role pulp.pulp_rpm_prerequisites" \;
+sed -i 's/pulp_use_system_wide_pkgs: false/pulp_use_system_wide_pkgs: true/g' roles/pulp/defaults/main.yml
+find ./molecule/*/group_vars/all -exec sh -c "yq w -i {} pulp_use_system_wide_pkgs true" \;
+find ./molecule/*source*/group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.source_dir \/var\/lib\/pulp\/devel\/pulp_rpm" \;
+find ./molecule/*upgrade*/group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.upgrade true" \;
+find ./molecule/*/group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.prereq_role pulp.pulp_rpm_prerequisites" \;
+find ./molecule/*/group_vars/all -exec sh -c "echo; echo {}; cat {}" \;
 
-find ./molecule/*/molecule.yml -exec sed -i 's/debian-10/fedora-30/g' {} \;
-find ./molecule/*/molecule.yml -exec sed -i 's/debian:buster/fedora:30/g' {} \;
+
+find ./molecule/*upgrade*/molecule.yml -exec sed -i '/quay.io\/pulp\/pulp-ci-dbuster:3.0.0/,+3 d' {} \;
+find ./molecule/*upgrade*/molecule.yml -exec sed -i '/debian-10/d' {} \;
+find ./molecule/*/molecule.yml -exec sed -i '/debian-10/,+3 d' {} \;
 
 travis-wait-enhanced --timeout=60m tox
