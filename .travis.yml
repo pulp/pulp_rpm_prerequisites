@@ -54,3 +54,7 @@ install:
   - wget -qO- https://github.com/crazy-max/travis-wait-enhanced/releases/download/v1.0.0/travis-wait-enhanced_1.0.0_linux_x86_64.tar.gz | sudo tar -C /usr/local/bin -zxvf - travis-wait-enhanced
 script:
   - ./.ansible-pulp_tox.sh
+notifications:
+  # Automatically import only the master branch to Galaxy
+  # https://galaxy.ansible.com/docs/contributing/importing.html?highlight=import#import-roles-via-travis-ci
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/?branch=master
