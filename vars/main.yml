@@ -1,3 +1,7 @@
 ---
 # vars file for pulp_rpm_prerequisites
+#
+# This file gets included under tasks so that the variables are in scope for the
+# pulp role, and with higher precedence than their defaults.
+
 pulp_use_system_wide_pkgs: true
