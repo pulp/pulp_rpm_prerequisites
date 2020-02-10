@@ -6,7 +6,7 @@ if [ ! -e ansible-pulp ]; then
 fi
 cd ansible-pulp
 if [ ! -e roles/pulp.pulp_rpm_prerequisites ]; then
-  ln -s $TRAVIS_BUILD_DIR roles/pulp.pulp_rpm_prerequisites
+  ln -s $GITHUB_WORKSPACE roles/pulp.pulp_rpm_prerequisites
 fi
 
 find ./molecule/*source*/group_vars/all -exec sh -c "yq w -i {} pulp_install_plugins.pulp-rpm.source_dir \/var\/lib\/pulp\/devel\/pulp_rpm" \;
@@ -19,4 +19,4 @@ find ./molecule/*upgrade*/molecule.yml -exec sed -i '/quay.io\/pulp\/pulp-ci-dbu
 find ./molecule/*upgrade*/molecule.yml -exec sed -i '/debian-10/d' {} \;
 find ./molecule/*/molecule.yml -exec sed -i '/debian-10/,+3 d' {} \;
 
-travis-wait-enhanced --timeout=60m tox
+tox
