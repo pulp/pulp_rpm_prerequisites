@@ -51,7 +51,7 @@ Shared Variables:
 License
 -------
 
-GPLv3
+GPLv2+
 
 Author Information
 ------------------

@@ -4,7 +4,7 @@ galaxy_info:
   description: Support role for Pulp RPM plugin prerequisities
   company: Red Hat
   issue_tracker_url: https://pulp.plan.io/projects/pulp_rpm/issues
-  license: GPLv3
+  license: GPL-2.0-or-later
   min_ansible_version: 2.4
   #
   # Provide a list of supported platforms, and for each platform a list of versions.
