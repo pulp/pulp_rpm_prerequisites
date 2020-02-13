@@ -15,18 +15,20 @@ packages:
   - bzip2-devel
   - expat-devel
   - file-devel
+  - git  # libsolv bindings from github
   - glib2-devel
   - gobject-introspection-devel
   - libcurl-devel
   - libmodulemd2-devel
   - libxml2-devel
   - ninja-build
+  - openssl-devel
   - pycairo-devel
   - python36-devel
   - python36-gobject  # Provides 'gi' Python module
   - rpm-devel
-  - openssl-devel
   - sqlite-devel
+  - swig  # libsolv bindings
   - xz-devel
   - zchunk-devel
   - zlib-devel
