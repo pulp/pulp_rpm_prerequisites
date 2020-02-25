@@ -4,7 +4,6 @@ packages:
   - gcc
   - make
   - cmake
-  - git  # libsolv bindings from github
   - libbz2-dev
   - libexpat1-dev
   - libmagic-dev
@@ -13,11 +12,10 @@ packages:
   - libxml2-dev
   - libpython3-dev
   - librpm-dev
-  - libssl-dev
+  - libssl-dev  # createrepo_c
   - libsqlite3-dev
   - liblzma-dev
   - libmodulemd-2.0-dev
-  - swig   # libsolv bindings
   - zlib1g-dev
 
 # These packages must be explicitly installed during the pulp role, after the
