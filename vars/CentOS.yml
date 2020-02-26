@@ -21,6 +21,7 @@ packages:
   - libmodulemd2-devel
   - libxml2-devel
   - ninja-build
+  - openssl-devel
   - pycairo-devel
   - python36-devel
   - python36-gobject  # Provides 'gi' Python module

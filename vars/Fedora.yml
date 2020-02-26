@@ -11,6 +11,7 @@ packages:
   - libcurl-devel
   - libmodulemd-devel
   - libxml2-devel
+  - openssl-devel
   - python3-devel
   - python3-gobject  # Provides 'gi' Python module
   - python3-libmodulemd
