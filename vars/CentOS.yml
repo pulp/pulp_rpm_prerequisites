@@ -7,7 +7,6 @@ packages:
   # later.
   # And if we switch to yum or dnf, it must be a separate task, or different
   # looping mechanism.
-  - epel-release
   - gcc
   - make
   - cairo-gobject-devel
@@ -24,7 +23,6 @@ packages:
   - openssl-devel
   - pycairo-devel
   - python36-devel
-  - python36-gobject  # Provides 'gi' Python module
   - rpm-devel
   - sqlite-devel
   - xz-devel
