@@ -7,7 +7,6 @@ packages:
   # later.
   # And if we switch to yum or dnf, it must be a separate task, or different
   # looping mechanism.
-  - epel-release
   - gcc
   - make
   - cairo-gobject-devel
