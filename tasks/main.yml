@@ -49,10 +49,3 @@
   when:
     - rpm_prereq_pip_packages is defined
     - prereq_pip_packages is defined
-
-# This puts the value of "true" into the correct scope, and makes it
-# higher priority than the pulp/defaults/. The alternative would be to
-# modify the include_roles task in ansible-pulp.
-- name: Set pulp_use_system_wide_pkgs for the pulp role
-  include_vars:
-    file: main.yml  # pulp_rpm_prerequisites/vars/main.yml
