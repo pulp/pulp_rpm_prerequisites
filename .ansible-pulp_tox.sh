@@ -18,5 +18,7 @@ find ./molecule/*/group_vars/all -exec sh -c "echo; echo {}; cat {}" \;
 find ./molecule/*upgrade*/molecule.yml -exec sed -i '/quay.io\/pulp\/pulp-ci-dbuster:3.0.0/,+3 d' {} \;
 find ./molecule/*upgrade*/molecule.yml -exec sed -i '/debian-10/d' {} \;
 find ./molecule/*/molecule.yml -exec sed -i '/debian-10/,+3 d' {} \;
+find ./molecule/*-upgrade/molecule.yml -exec sed -i 's/pulp-ci-c7:3.0.0/pulp_rpm-ci-c7:3.1.0/g' {} \;
+find ./molecule/*-upgrade/molecule.yml -exec sed -i 's/pulp-ci-f31:3.0.0/pulp_rpm-ci-f31:3.1.0/g' {} \;
 
 tox
