@@ -1,3 +1,6 @@
+![Pulp CI](https://github.com/pulp/pulp_rpm_prerequisites/workflows/Pulp%20CI/badge.svg)
+![Cron jobs](https://github.com/pulp/pulp_rpm_prerequisites/workflows/Cron%20jobs/badge.svg)
+
 Pulp 3 RPM plugin prerequisites
 ===============================
 
