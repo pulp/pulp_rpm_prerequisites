@@ -1,6 +1,6 @@
 ---
-name: Pulp CI
-on: [push, pull_request]
+name: Pulp PR
+on: pull_request
 jobs:
   compact_test:
     runs-on: ubuntu-latest
@@ -26,7 +26,6 @@ jobs:
           pip install --upgrade pip
           pip install tox requests
       - name: Check commit message
-        if: github.event_name == 'pull_request'
         env:
           GITHUB_CONTEXT: ${{ github.event.pull_request.commits_url }}
         run: |
@@ -52,5 +51,9 @@ jobs:
           docker pull quay.io/pulp/pulp_rpm-ci-f31:3.1.0
           echo "::set-env name=TOXENV::py37-upgrade"
       - name: Run tox
+        run: ./.ansible-pulp_tox.sh
+        shell: bash
+      - name: Retry tox if it failed
+        if: failure()
         run: ./.ansible-pulp_tox.sh
         shell: bash
