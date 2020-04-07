@@ -4,7 +4,7 @@ Pulp 3 RPM plugin prerequisites
 ===============================
 
 This role installs prerequisites for pulp-rpm plugin use, when installed by
-ansible-pulp.
+pulp_installer.
 
 Requirements
 ------------
@@ -23,7 +23,7 @@ as the foldername `pulp.pulp_rpm_prerequisites`, by either:
 Example Playbook
 ----------------
 
-Here's an example playbook for using pulp_rpm_prerequisites as part of ansible-pulp.
+Here's an example playbook for using pulp_rpm_prerequisites as part of pulp_installer.
 
     ---
     - hosts: all

@@ -1,10 +1,10 @@
 #!/bin/bash
-# wrapper for inserting pulp_rpm_prerequisites into the ansible-pulp CI
+# wrapper for inserting pulp_rpm_prerequisites into the pulp_installer CI
 cd ..
-if [ ! -e ansible-pulp ]; then
-  git clone https://github.com/pulp/ansible-pulp
+if [ ! -e pulp_installer ]; then
+  git clone https://github.com/pulp/pulp_installer
 fi
-cd ansible-pulp
+cd pulp_installer
 if [ ! -e roles/pulp.pulp_rpm_prerequisites ]; then
   ln -s $GITHUB_WORKSPACE roles/pulp.pulp_rpm_prerequisites
 fi
