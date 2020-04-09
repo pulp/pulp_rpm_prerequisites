@@ -52,7 +52,3 @@ jobs:
       - name: Run tox
         run: ./.pulp_installer_tox.sh
         shell: bash
-      - name: Retry tox if it failed
-        if: failure()
-        run: ./.pulp_installer_tox.sh
-        shell: bash
