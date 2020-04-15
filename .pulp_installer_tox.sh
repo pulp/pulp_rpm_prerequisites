@@ -21,4 +21,6 @@ find ./molecule/*/molecule.yml -exec sed -i '/debian-10/,+3 d' {} \;
 find ./molecule/*-upgrade/molecule.yml -exec sed -i 's/pulp-ci-c7:3.0.0/pulp_rpm-ci-c7:3.1.0/g' {} \;
 find ./molecule/*-upgrade/molecule.yml -exec sed -i 's/pulp-ci-f31:3.0.0/pulp_rpm-ci-f31:3.1.0/g' {} \;
 
-for i in 1 2; do tox && break || sleep 45; done
+tox && exit 0 || true
+sleep 45
+tox
