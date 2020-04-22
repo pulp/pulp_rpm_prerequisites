@@ -11,6 +11,7 @@ deploy_client_to_rubygems: false
 deploy_daily_client_to_pypi: false
 deploy_daily_client_to_rubygems: false
 deploy_to_pypi: false
+docker_fixtures: false
 docs_test: false
 plugin_app_label: rpm
 plugin_camel: PulpRpmPrerequisites
@@ -23,9 +24,13 @@ plugin_name: pulp_rpm_prerequisites
 plugin_snake: pulp_rpm_prerequisites
 pulp_settings: null
 pulpcore_branch: master
+pulpcore_pip_version_specifier: null
 pydocstyle: false
 pypi_username: null
 stable_branch: null
 test_bindings: false
 test_performance: false
+test_s3: false
+travis_addtl_services: []
 travis_notifications: null
+
