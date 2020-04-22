@@ -57,6 +57,8 @@ jobs:
             fi
           done
         shell: bash
+      - name: Before Install
+        run: .github/before_install.sh
       - name: Set tox env for python 27
         if: matrix.python == '2.7'
         run: echo "::set-env name=TOXENV::py27-${{ matrix.env.TEST_TYPE }}"
@@ -72,9 +74,7 @@ jobs:
           docker pull quay.io/pulp/pulp_rpm-ci-c7:3.1.0
           docker pull quay.io/pulp/pulp_rpm-ci-f31:3.1.0
       - name: Run tox
-        run: |
-          export TEST_TYPE
-          ./.pulp_installer_tox.sh
+        run: ./.pulp_installer_tox.sh
         env:
           TEST_TYPE: ${{ matrix.env.TEST_TYPE }}
         shell: bash

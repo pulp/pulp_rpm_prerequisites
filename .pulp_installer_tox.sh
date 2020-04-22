@@ -1,12 +1,17 @@
 #!/bin/bash
 # wrapper for inserting pulp_rpm_prerequisites into the pulp_installer CI
+#
+# Should be usable on local developer systems as well
 cd ..
+
+# On CI, created by before_install.sh, with PR support.
 if [ ! -e pulp_installer ]; then
   git clone https://github.com/pulp/pulp_installer
 fi
+
 cd pulp_installer
 if [ ! -e roles/pulp.pulp_rpm_prerequisites ]; then
-  ln -s $GITHUB_WORKSPACE roles/pulp.pulp_rpm_prerequisites
+  ln -s ${GITHUB_WORKSPACE:-../../pulp_rpm_prerequisites} roles/pulp.pulp_rpm_prerequisites
 fi
 
 # TEMP lines until pulp_rpm 3.3.0 is released, due to #6073 not implemented yet.
