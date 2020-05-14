@@ -61,4 +61,6 @@ jobs:
         run: ./.pulp_installer_tox.sh
         env:
           TEST_TYPE: ${{ matrix.env.TEST_TYPE }}
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
         shell: bash
