@@ -33,13 +33,13 @@ Here's an example playbook for using pulp_rpm_prerequisites as part of pulp_inst
           secret_key: secret
         pulp_install_plugins:
           pulp-rpm:
-            prereq_role: "pulp.pulp_rpm_prerequisites"
+            prereq_role: "pulp.pulp_rpm_prerequisites"  # https://galaxy.ansible.com/pulp/pulp_rpm_prerequisites
       roles:
-        - pulp-database
-        - pulp-workers
-        - pulp-resource-manager
-        - pulp-webserver
-        - pulp-content
+        - pulp_database
+        - pulp_workers
+        - pulp_resource_manager
+        - pulp_webserver
+        - pulp_content
       environment:
         DJANGO_SETTINGS_MODULE: pulpcore.app.settings
 
